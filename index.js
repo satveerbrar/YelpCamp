@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const ejsMate = require('ejs-mate');
 const Campground = require('./models/campground');
 
 try {
@@ -11,6 +12,8 @@ try {
   } catch (error) {
     handleError(error);
 }
+
+app.engine('ejs', ejsMate)  // to use boilerplate for ejs files
 
 app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.urlencoded({ extended: true }));
