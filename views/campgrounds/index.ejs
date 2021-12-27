@@ -1,4 +1,4 @@
-<% layout('layouts/boilerplate.ejs') %> 
+<% layout('layouts/boilerplate.ejs') %>
     <h1>All Campgrounds</h1>
     <div>
         <a href="/campgrounds/new">Add Campground</a>
@@ -11,14 +11,21 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><%=campground.title%></h5>
-                        <p class="card-text"><%=campground.description%></p>
+                        <h5 class="card-title">
+                            <%=campground.title%>
+                        </h5>
                         <p class="card-text">
-                            <small class="text-muted"><%=campground.location%></small>
+                            <%=campground.description%>
                         </p>
-                        <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=campground.location%>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%>
+                                </a>
                     </div>
                 </div>
             </div>
-        </div>     
-    <% } %>  
+        </div>
+        <% } %>
